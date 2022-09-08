@@ -82,5 +82,3 @@ Note that the current implementation still returns the encrypted password, this 
 * GET     `api/v1/blog/published` Published blogs
 * PUT     `api/v1/blog/1` Update the blog with id = 1
 * DELETE  `api/v1/blog/1` Delete the blog with id = 1
-
-Now make all calls pass the token in the header as a ***Bearer Token***.
