@@ -1,5 +1,5 @@
 {
-    "name": "node.js-express-mysql",
+    "name": "node.js-mysql-api",
     "version": "1.0.0",
     "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
     "license": "MIT",

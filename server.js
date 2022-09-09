@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to nodejs-express-mysql application." });
+  res.json({ message: "Welcome to Node.js MySQL API application." });
 });
 require("./app/routes/blog.routes.js")(app);
 // set port, listen for requests
