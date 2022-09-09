@@ -50,9 +50,9 @@ CREATE TABLE IF NOT EXISTS `blogs` (
 
 ## API Endpoints & Usage
 
-To be able to login, you need to use the create new user endpoint to set up a user account.
+To be able to add new post to blog
 
-* POST    `api/v1/blog` login with username and password in your db to get token back
+* POST    `api/v1/blog` send title and description of new post
 
 ```
 {
@@ -63,7 +63,7 @@ To be able to login, you need to use the create new user endpoint to set up a us
 
 *** Output ***
 
-Note that the current implementation still returns the encrypted password, this needs to be removed from the response.
+Note that the current implementation still returns the sent data and its id
 
 ```
 {
