@@ -32,9 +32,9 @@ npm install
 ## Setting configuration file
 Edit .env file in the root of the project and set the parameters for connect to database
 
-## Running the project as developer
+## Running the project (As developer `npm run start:dev`)
 
-`npm run start:dev`
+`npm run start`
 
 ## Database Table Creation Statement
 Use the following DDL (Data Definition Language) to create the users table.
