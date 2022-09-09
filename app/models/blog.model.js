@@ -32,11 +32,13 @@ Blogb.findById = (id, result) => {
     result({ kind: "not_found" }, null);
   });
 };
-Blogb.getAll = (title, result) => {
+Blogb.getAll = (title , limit , page , result) => {
   let query = "SELECT * FROM blogs";
   if (title) {
-    query += ` WHERE title LIKE '%${title}%'`;
+    query += ` where title LIKE '%${title}%' AND `;
   }
+    offset = limit * (page - 1)
+    query += ` LIMIT ${limit} OFFSET ${offset} `;
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -47,8 +49,29 @@ Blogb.getAll = (title, result) => {
     result(null, res);
   });
 };
-Blogb.getAllPublished = result => {
-  sql.query("SELECT * FROM blogs WHERE published=true", (err, res) => {
+Blogb.getAllcount = (title=null , allORpublished=null , result) => {
+  let query
+  if (allORpublished === null) {
+    query = "SELECT * FROM blogs";
+  if (title) {
+    query += ` where title LIKE '%${title}%' AND `;
+  }
+  }else{
+    query = "SELECT * FROM blogs WHERE published=true";
+  }
+  sql.query(query, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+    console.log("All Items: ", res.length);
+    result(null, res.length);
+  });
+};
+Blogb.getAllPublished = (limit , page , result) => {
+  offset = limit * (page - 1)
+  sql.query("SELECT * FROM blogs WHERE published=true LIMIT "+limit+" OFFSET "+offset+" ", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

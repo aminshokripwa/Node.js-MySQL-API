@@ -76,8 +76,8 @@ Note that the current implementation still returns the encrypted password, this 
 }
 ```
 
-* GET     `api/v1/blog` Retrieving the blogs
-* GET     `api/v1/blog?title=API` Retrieving blogs include title API
+* GET     `api/v1/blog?page=1&limit=4` Retrieving the blogs
+* GET     `api/v1/blog?title=API&page=1&limit=4` Retrieving blogs include title API
 * GET     `api/v1/blog/1` Retrieve blog with id = 1
 * GET     `api/v1/blog/published` Published blogs
 * PUT     `api/v1/blog/1` Update the blog with id = 1
